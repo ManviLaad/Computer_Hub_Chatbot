@@ -1,0 +1,16 @@
+import requests
+
+# Define the URL and the JSON path
+url = "http://127.0.0.1:5000/query"
+json_path = r"C:\Users\IT\Desktop\Computer_hub\Corpus (4).json"
+question = "What makes Jessup Cellars wines special?"
+
+# Send the POST request with the JSON path and question
+response = requests.post(url, json={
+    "json_path": json_path,
+    "question": question
+})
+
+# Print the response
+print("Status Code:", response.status_code)
+print("Response:", response.json())
